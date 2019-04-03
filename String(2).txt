@@ -1,0 +1,205 @@
+1)import java.util.*;
+public class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String date=sc.nextLine();
+        UserMainCode.validateDate(date);
+        
+    }
+}
+
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.ParseException;
+public class UserMainCode
+{
+    static void validateDate(String date)
+    {
+        SimpleDateFormat sdfrmt = new SimpleDateFormat("dd-MM-yyyy");
+        sdfrmt.setLenient(false);
+         try
+        {
+	        Date javaDate = sdfrmt.parse(date); 
+	        System.out.println("Valid");
+	    }
+	    /* Date format is invalid */
+	    catch (ParseException e)
+	    {
+	        System.out.println("Invalid");
+	    }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+2)import java.util.*;
+class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        String city=sc.nextLine();
+        
+        UserMainCode ob=new UserMainCode();
+        boolean result=ob.validateCity(city);
+        
+        if(result)
+        {
+            System.out.println("Valid");
+        }
+        else
+        {
+             System.out.println("Invalid");
+        }
+    }
+}
+
+class UserMainCode
+{
+    static boolean validateCity(String city)
+    {
+        int length=city.length();
+        int f=2,flag=0;
+        int e=length-2 ;
+        
+        for(int i=0;i<length;i++)
+        {
+            if(i<2)
+            {
+                if((city.charAt(i)>='A' && city.charAt(i)<='Z') || (city.charAt(i)>='a' && city.charAt(i)<='z'))
+                {
+                    
+                }
+                else
+                {
+                    flag=1;
+                    break;
+                }
+            }
+            if(i>=2 && i<e)
+            {
+                if(city.charAt(i)!='*')
+                {
+                    return false;
+                }
+            }
+            if(i>=e && i<length)
+            {
+                if((city.charAt(i)>='A' && city.charAt(i)<='Z') || (city.charAt(i)>='a' && city.charAt(i)<='z'))
+                {
+                    
+                }
+                else
+                {
+                    flag=1;
+                    break;
+                }
+                
+            }
+        }
+        if(flag==0)
+        return true;
+        else
+        return false;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+3)import java.util.*;
+class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        String name=sc.nextLine();
+        
+        UserMainCode ob=new UserMainCode();
+        
+        boolean result=ob.validatePlayer(name);
+        
+        if(result)
+        {
+            System.out.println("Valid");
+        }
+        else
+        {
+            System.out.println("Invalid");
+        }
+    }
+}
+
+class UserMainCode
+{
+    static boolean validatePlayer(String name)
+    {
+        int length=name.length();
+        int i;
+        
+        for(i=1;i<=length;i++)
+        {
+           
+            if(i%2==0 && name.charAt(i-1)=='a')
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String input=sc.nextLine();
+        String S_value;
+        int length=input.length();
+        int i,I_value,count=0;
+        for(i=0;i<=length-3;i++)
+        {
+            S_value=input.substring(i,3+i);
+            I_value=Integer.parseInt(S_value);
+            
+            if(I_value%4==0)
+            {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
