@@ -1,0 +1,239 @@
+1)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String n1,n2;
+        System.out.println("Enter team1");
+        n1=sc.nextLine();
+        System.out.println("Enter team2");
+        n2=sc.nextLine();
+        System.out.println("Enter third character");
+        char c = sc.next().charAt(0);
+        
+        if(n1.charAt(2)==c)
+        {
+            System.out.println("Winner Team: "+n1);
+        }
+        else
+        {
+            System.out.println("Winner Team : "+n2);
+        }
+        
+    }
+}
+2)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String v1,v2;
+        System.out.println("Enter venue1");
+        v1=sc.nextLine();
+        System.out.println("Enter venue2");
+        v2=sc.nextLine();
+        
+        if(v1.equalsIgnoreCase(v2))
+        {
+            System.out.println("Both the venues are same.");
+        }
+        else
+        {
+            System.out.println("Both the venues are different.");
+            
+        }
+    }
+}
+3)import java.util.*;
+class Main
+{
+    public static void main(String args[])throws Exception
+    {
+        int i;
+        
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number of players");
+        int n=sc.nextInt();
+        String name,result="asas";
+        
+        for(i=0;i<n+1;i++)
+        {
+             name=sc.nextLine();  
+             if(name.indexOf('a')==name.lastIndexOf('a'))
+             {
+                 result=name;
+             }
+        }
+        System.out.println("Player of the Match:");
+        System.out.println(result);
+        
+    }
+}
+4)import java.util.*;
+class Main
+{
+    public static void main(String[] args)
+    {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter team name");
+    String name=sc.nextLine();
+    
+    System.out.println("Enter starting index of the sequence");
+    int start=sc.nextInt();
+    System.out.println("Enter ending index of the sequence");
+    int end=sc.nextInt();
+    
+    System.out.println(name.substring(start,end));
+    }
+    
+}
+
+5)import java.util.*;
+class Main
+{
+    public static void main(String[] args)
+    {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter Player name");
+    String name=sc.nextLine();
+    
+    System.out.println("Enter starting index");
+    int start=sc.nextInt();
+    System.out.println("Short name of "+name+": "+name.substring(start));
+    
+    }
+}
+
+
+6)import java.util.*;
+class Main
+{
+    public static void main(String[] args)
+    {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the number of players");
+    int n=sc.nextInt();
+    sc.nextLine();
+    ArrayList<String> li=new ArrayList<String>();
+    int i;
+    String name;
+    System.out.println("Enter the player name");
+    
+    for(i=0;i<n;i++)
+    {
+        name=sc.nextLine();
+        if(name.charAt(0)=='M' || name.charAt(name.length()-1)=='a')
+        {
+            li.add(name);
+        }
+    }
+    System.out.println("Player name starting with 'M' or Ending with 'a'");
+    for(i=0;i<li.size();i++)
+    {
+        System.out.println(li.get(i));
+    }
+}
+}
+7)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter player names");
+        String name1=sc.nextLine();
+        String name2=sc.nextLine();
+        String name3="Michael";
+        if(name1.regionMatches(0,name3,0,7) && name2.regionMatches(0,name3,0,7)  )
+        {
+            System.out.println("Both the players names starts with Michael");
+        }
+        else
+        {
+             System.out.println("Both the players names does not starts with Michael");
+        }
+    }
+}
+
+8)import java.util.*;
+class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter team details");
+        String team=sc.nextLine();
+        
+        System.out.println("After replacement");
+        String replace=team.replaceAll("Captain","Skipper");
+        System.out.println(replace);
+        
+    }
+}
+9)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter number of players");
+        int n=sc.nextInt();
+        sc.nextLine();
+        int i;
+        String name;
+        
+        ArrayList<String> li=new ArrayList<String>();
+        
+        System.out.println("Enter player names");
+        for(i=0;i<n;i++)
+        {
+           name=sc.nextLine();
+           if(name.contains("Sharma"))
+           {
+               li.add(name);
+           }
+        }
+        for(i=0;i<li.size();i++)
+        {
+            System.out.println(li.get(i));
+        }
+    
+    }
+}
+10)import java.util.*;
+class Main
+{
+    public static void main (String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String s=sc.next();
+        int i,x=0,y=0;
+        for(i=0;i<n;i++)
+        {
+            if(s.charAt(i)=='U')
+            {
+                y++;
+            }
+            else if(s.charAt(i)=='D')
+            {
+                y--;
+            }
+            else if(s.charAt(i)=='R')
+            {
+                x++;
+            }
+            else
+            {
+                x--;
+            }
+        }
+        System.out.println(x+" "+y);
+    }
+}
+
+
+
+
