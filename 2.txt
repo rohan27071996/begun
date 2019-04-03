@@ -1,0 +1,182 @@
+1)import java.util.*;
+class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int start=sc.nextInt();
+        int end=sc.nextInt();
+    
+        int i,j,c=0,flag=0;
+        for(i=start+1;i<end;i++)
+        {
+            if(i>=22 && i<end)
+            {
+                int num=i,rem;
+                c=0;
+                while(num!=0)
+                {
+                    rem=num%10;
+                    flag=0;
+                    num=num/10;
+                    for(j=2;j<=rem/2;j++)
+                    {
+                        if(rem%j==0)
+                        {
+                            flag=1;
+                            break;
+                        }
+                    }
+                    if(flag==0 && rem>1)
+                    c=c+1;
+                }
+                if(c==2)
+                {
+                    System.out.print(i+" ");
+                }
+            }
+        }
+        
+            
+        }
+    }
+2)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int i,remainder,reversedInteger,num;
+        for(i=a;i<=b;i++)
+        {
+            num=i;
+            reversedInteger=0;
+            while( num != 0 )
+            {
+                remainder = num % 10;
+                reversedInteger = reversedInteger * 10 + remainder;
+                num  /= 10;
+            }
+            if (i == reversedInteger)
+                System.out.print(i+" ");
+        }
+        
+    }
+}
+3)import java.util.*;
+class Main
+{
+static int divsum(int n)   
+   {   
+       int sum = 0;   
+   for (int i = 1; i <= (Math.sqrt(n)); i++) {   
+           if (n % i == 0) {   
+                
+    if (n / i == i) {   
+                   sum = sum + i;   
+                }   
+               else   
+                {   
+                  sum = sum + i;   
+                   sum = sum + (n / i);   
+                }   
+            }   
+        }   
+    
+       return sum;   
+    }   
+    
+      
+static boolean isDef(int n)   
+    {   
+   return (divsum(n) < (2 * n));   
+    }   
+public static void main(String args[])   
+    {   
+  
+       Scanner sc = new Scanner(System.in);   
+       int a = sc.nextInt();  
+       int b = sc.nextInt();
+       int i;
+       for(i=a;i<=b;i++)
+       {
+       if (isDef(i))   
+          System.out.print(i+" ");    
+        }   
+    
+    }
+}   
+4)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+    Scanner sc=new Scanner(System.in) ;
+    int start=sc.nextInt();
+    int end=sc.nextInt();
+    
+    int i,r,counte,counto;
+   
+    for(i=start;i<=end;i++)
+    {
+        int num=i;
+        counte=0;
+        counto=0;
+        while(num>0)
+        {
+            r=num%10;
+            
+            if(r%2==0 && r>0)
+            {
+                counte++;
+            }
+            if(r%2!=0 && r>0)
+            {
+                counto++;
+            }
+            num=num/10;
+        }
+        if(counte==2 && counto==2)
+        {
+            System.out.print(i+" ");
+        }
+    }
+    
+    }
+    
+}
+5)import java.util.*;
+public class Main {
+
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int i,j;
+        if(a==1)
+        {
+            a=a+1;
+        }
+        for(i=a;i<=b;i++)
+        {
+            boolean flag = false;
+            for( j = 2; j <= i/2; ++j)
+            {
+                // condition for nonprime number
+                if(i % j == 0)
+                {
+                    flag = true;
+                    break;
+                }
+            }
+    
+            if (!flag)
+                System.out.print(i+ " ");
+            
+        }
+    }
+}
+   
