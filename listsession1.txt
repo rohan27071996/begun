@@ -1,0 +1,430 @@
+import java.util.*;
+1)class Main
+{
+    public static void main(String[] args)
+    {
+        ArrayList<Integer> li=new ArrayList<Integer>();
+        Scanner  sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int i,sum=0;
+        float avg;
+        for(i=0;i<n;i++)
+        {
+            li.add(sc.nextInt());
+        }
+        for(Integer value:li)
+        {
+            sum=sum+value;
+        }
+        float sum1=sum;
+        avg=sum1/li.size();
+        
+        System.out.println(sum);
+        System.out.println(avg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2)import java.util.*;
+class Main
+{
+    public static void main(String[] args)
+    {
+        ArrayList<Integer> li=new ArrayList<Integer>();
+        Scanner  sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int i,value;
+        for(i=0;i<n;i++)
+        {
+            li.add(sc.nextInt());
+        }
+        Collections.sort(li);
+        
+        for(i=0;i<n;i++)
+        {
+            value=li.get(i);
+            System.out.println(value);
+        }
+        
+       
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3) import java.util.*;
+class Main
+{
+    public static void main(String[] args)
+    {
+        ArrayList<String> li=new ArrayList<String>();
+        Scanner  sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        sc.nextLine();
+        int i,count=0;
+        String venue;
+        
+        for(i=0;i<n;i++)
+        {
+            li.add(sc.nextLine());
+        }
+     
+        venue=sc.nextLine();
+        String st=new String(venue);
+        
+        
+        for(i=0;i<li.size();i++)
+        {
+            
+            if(st.equals(li.get(i)))
+            {
+                count++;
+            }
+            
+        }
+        System.out.println(count);
+        
+       
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String name;
+        int match1,match2,i;
+        System.out.println("Enter the team name");
+        name=sc.nextLine();
+        System.out.println("Enter the number of matches played in home ground");
+        match1=sc.nextInt();
+        
+        ArrayList<Integer> li1=new ArrayList<Integer>();
+        ArrayList<Integer> li2=new ArrayList<Integer>();
+        ArrayList<Integer> li3=new ArrayList<Integer>();
+        
+        System.out.println("Enter the runs scored");
+        for(i=0;i<match1;i++)
+        {
+            li1.add(sc.nextInt());
+        }
+        
+        System.out.println("Enter the number of matches played in other ground");
+        match2=sc.nextInt();
+        
+        System.out.println("Enter the runs scored");
+        for(i=0;i<match2;i++)
+        {
+            li2.add(sc.nextInt());
+        }
+        
+        System.out.println("Runs scored by "+name);
+        li3.addAll(li1);
+        li3.addAll(li2);
+        
+        Iterator it=li3.iterator();
+        while(it.hasNext())
+        {
+            System.out.println(it.next());
+        }
+        
+        System.out.println("Run scored by "+name+" more than 300");
+        for(i=0;i<(match1+match2);i++)
+        {
+            if(li3.get(i)>300)
+            System.out.println(li3.get(i));
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        int i;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the top 5 scorers of IPL Season 8");
+        
+        
+        ArrayList<String> li1=new ArrayList<String>();
+        for(i=0;i<5;i++)
+        {
+            li1.add(sc.nextLine());
+        }
+        
+        System.out.println("Enter the top 5 scorers of IPL Season 9");
+        
+        
+        ArrayList<String> li2=new ArrayList<String>();
+        for(i=0;i<5;i++)
+        {
+            li2.add(sc.nextLine());
+        }
+        
+        li1.retainAll(li2);
+        
+        System.out.println("Consistent run scorers");
+        
+        Iterator it=li1.iterator();
+        while(it.hasNext())
+        {
+            System.out.println(it.next());
+        }
+        
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the teams in ranking table");
+        ArrayList<String> li=new ArrayList<String>();
+        int i;
+        for(i=0;i<5;i++)
+        {
+            li.add(sc.nextLine());
+        }
+        
+        System.out.println("Enter the rank to be searched");
+        int rank=sc.nextInt();
+        for(i=0;i<5;i++)
+        {
+            if(rank==i+1)
+            {
+                System.out.println(li.get(i));
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7)import java.util.*;
+class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int i;
+        ArrayList<String> li=new ArrayList<String>();
+        for(i=0;i<5;i++)
+        {
+            li.add(sc.nextLine());
+        }
+        System.out.println("Enter swap positons");
+        int swap1=sc.nextInt();
+        int swap2=sc.nextInt();
+        
+        Collections.swap(li,swap1,swap2);
+        for(i=0;i<5;i++)
+        {
+            System.out.println(li.get(i));
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8)import java.util.*;
+class Main
+{
+    public static void main(String arg[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the player details");
+        
+        ArrayList li=new ArrayList();
+        System.out.println("Enter player name");
+        li.add(sc.nextLine());
+        System.out.println("Enter age");
+        li.add(sc.nextLine());
+        System.out.println("Enter Country");
+        li.add(sc.nextLine());
+        System.out.println("Player Details");
+        int i;
+        for(i=0;i<li.size();i++)
+        {
+            System.out.println(li.get(i));
+        }
+        System.out.println("Enter Skill");
+        String skill=sc.nextLine();
+        System.out.println("Enter the position to add the skill");
+        int pos=sc.nextInt();
+        li.set(pos,skill);
+        System.out.println("Player Details");
+        for(i=0;i<li.size();i++)
+        {
+            System.out.println(li.get(i));
+        }
+        System.out.println("Enter the position of the detail to be removed");
+        int pos_r=sc.nextInt();
+        li.remove(pos_r);
+        System.out.println("Player Details");
+        for(i=0;i<li.size();i++)
+        {
+            System.out.println(li.get(i));
+        }
+    }
+}
+
+
+
