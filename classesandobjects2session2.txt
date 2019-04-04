@@ -1,0 +1,179 @@
+-------2)----import java.util.*;
+public class Main
+{
+     public static void main(String[] args) 
+	 {
+		 	Scanner sc=new Scanner(System.in);
+			System.out.println("Enter the player 1 details");
+            System.out.println("Enter the player name");
+            String s1=sc.nextLine();
+            System.out.println("Enter the country name");
+            String s2=sc.nextLine();
+             System.out.println("Enter the skill");
+              String s3=sc.nextLine();
+             Player p1=new Player();
+             p1.setName(s1);
+             p1.setCountry(s2);
+             p1.setSkill(s3);
+		    System.out.println(p1.toString());
+            
+	       System.out.println("Enter the player 2 details");
+            System.out.println("Enter the player name");
+            String ss1=sc.nextLine();
+            System.out.println("Enter the country name");
+            String ss2=sc.nextLine();
+             System.out.println("Enter the skill");
+              String ss3=sc.nextLine();
+              Player p2=new Player();
+             p2.setName(ss1);
+             p2.setCountry(ss2);
+             p2.setSkill(ss3);
+    	    System.out.println(p2.toString());
+            
+            if(p1.equals(p2))
+            {
+                System.out.println("Both the player details are same. ");
+            }
+            else
+            {
+                System.out.println("Both the player details are not same. ");
+            }
+	 }
+}
+
+
+
+public class Player {
+   private String name; 
+    private String country;
+    private String skill;
+
+public Player() {
+    	}
+
+public Player(String name, String country, String skill)
+	    {
+	        this.name=name;
+	        this.country=country;
+	        this.skill=skill;
+	    }
+	
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		public String getCountry() {
+			return country;
+		}
+		public void setCountry(String country) {
+			this.country = country;
+		}
+		public String getSkill() {
+			return skill;
+		}
+		public void setSkill(String skill) {
+			this.skill = skill;
+		}
+		
+    	@Override
+		public String toString() {
+			return (this.name+" --- "+this.country+" --- "+this.skill);
+		}
+		@Override
+		public boolean equals(Object obj) {
+            
+            boolean flag=false;
+			Player p1=(Player)obj;
+			if((this.name.equals(p1.name))&&(this.country.equals(p1.country))&&(this.skill.equals(p1.skill)))
+            {
+                        flag=true;
+            }   
+                    
+			return flag;
+		}
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------1)------
+import java.util.*;
+public class Main
+{
+     public static void main(String[] args) 
+	 {
+		 	Scanner sc=new Scanner(System.in);
+			System.out.println("Enter the number of innings");
+			int n=Integer.parseInt(sc.nextLine());
+	        Innings i[]=new Innings[n];
+	        for(int v=0;v<n;v++)
+	        {
+	            System.out.println("Enter the values for Innings "+(v+1));
+	            System.out.println("Enter the BattingTeam");
+	            String s=sc.nextLine();
+	            System.out.println("Enter the runs scored");
+	            Long r=Long.parseLong(sc.nextLine());
+	            i[v]= new Innings(s,r);
+	        }
+	         System.out.println("Innings Details");
+	         for(int v=0;v<n;v++)
+	         {
+	               System.out.println("Innings "+(v+1)+"\n"+i[v].toString());
+	         }
+	 }
+}
+
+
+
+
+public class Innings
+{
+    String battingTeam; 
+    long runs;
+    public Innings()
+    {
+        
+    }
+    public Innings(String battingTeam,long runs)
+    {
+        this.battingTeam=battingTeam;
+        this.runs=runs;
+    }
+    public String getBattingTeam()
+    {
+        return battingTeam;
+    }
+    public void setBattingTeam(String battingTeam)
+    {
+        this.battingTeam=battingTeam;
+    }
+    public long getRuns()
+    {
+        return runs;
+    }
+    public void setRuns(long runs)
+    {
+        this.runs=runs;
+    }
+    @Override
+	public String toString()
+    {
+		return (this.battingTeam+" -- "+this.runs);
+	}
+    
+}
+	

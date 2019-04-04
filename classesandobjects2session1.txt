@@ -1,0 +1,59 @@
+Classes and objects2 session1
+
+1)import java.util.Scanner;
+public class Main
+{
+    public static void main(String args[]) 
+    {
+    	Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number of venues");
+		int n=Integer.parseInt(sc.nextLine());
+        Venue v[]=new Venue[n];
+        int i;
+        String s=" ";
+        String arr[];
+        for(i=0;i<n;i++)
+        {
+            System.out.println("Enter the details of venue "+(i+1));
+            s=sc.nextLine();
+            arr=s.split(",");
+            v[i]=new Venue(arr[0], arr[1]);
+        }
+         System.out.println("Venue Details");
+         for(i=0;i<n;i++)
+         {
+              System.out.println("Venue Name : "+v[i].getName());
+               System.out.println("City Name : "+v[i].getCity());
+         }
+	}
+} 
+
+
+
+
+public class Venue
+{
+    private String name; 
+    private String city; 
+    public Venue()
+    {
+        
+    }
+    public Venue(String name, String city)
+    {
+        this.name=name;
+        this.city=city;
+    }
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	} 
+} 
