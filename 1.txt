@@ -1,0 +1,223 @@
+1)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int year=sc.nextInt();
+        if(year%400 == 0)
+        {
+            System.out.println("Yes");
+            System.exit(0);
+        }
+        else if((year%100 !=0) && (year%4 == 0))
+        {
+            System.out.println("Yes");
+        }
+        else
+        {
+            System.out.println("No");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+2)import java.util.*;
+
+class Main
+{
+    public static void main(String args[])
+    {
+        int i;
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        for(i=2;i<=100;i=i+3)
+        {
+            if(n==i)
+            {
+                System.out.println("Yes");
+                return;
+            }
+        }
+        System.out.println("No");
+    }
+}
+
+
+
+
+
+
+
+3)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        List<Integer> li=new ArrayList<>();
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        int d=sc.nextInt();
+        int e=sc.nextInt();
+        int amount=e-a;
+        li.add(b);
+        li.add(c);
+        li.add(d);
+        
+        Collections.sort(li);
+        if(amount>=li.get(0))
+        {
+            if(amount>=(li.get(0)+li.get(1)))
+            {
+                if(amount>=(li.get(0)+li.get(1)+li.get(2)))
+                {
+                    System.out.println("3");
+                }
+                else
+                {
+                    System.out.println("2");
+                }
+            }
+            else
+            {
+                System.out.println("1");
+            }
+            
+        }
+        else
+        {
+            System.out.println("0");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        int arr[]=new int[3];
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        int count100=0;
+        int count50=0;
+        arr[0]=a;
+        arr[1]=b;
+        arr[2]=c;
+        for(int score:arr)
+        {
+            if(score>=100)
+            {
+                count100++;
+            }
+            if(score>=50)
+            {
+                count50++;
+            }
+        }
+        if(count100==2 || count50==3)
+        {
+            System.out.println("Selected");
+        }
+        else if(count100==1 || count50==2)
+        {
+            System.out.println("Waitlisted");
+        }
+        else
+        {
+            System.out.println("Rejected");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5)import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        List<Integer> li=new ArrayList<>();
+        Scanner sc=new Scanner(System.in);
+        
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        int d=sc.nextInt();
+        boolean creditcard=sc.nextBoolean();
+        if(creditcard==true)
+        {
+            System.out.println("3");
+        }
+        else
+        {
+        li.add(a);
+        li.add(b);
+        li.add(c);
+        
+        Collections.sort(li);
+        if(d>=li.get(0))
+        {
+            if(d>=(li.get(0)+li.get(1)))
+            {
+                if(d>=(li.get(0)+li.get(1)+li.get(2)))
+                {
+                    System.out.println("3");
+                }
+                else
+                {
+                    System.out.println("2");
+                }
+            }
+            else
+            {
+                System.out.println("1");
+            }
+            
+        }
+        else
+        {
+            System.out.println("0");
+        }
+        
+    }
+    }
+}
